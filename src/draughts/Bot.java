@@ -1,9 +1,15 @@
 package draughts;
 
-public interface Bot {
-
-	public Action takeTurn();
+public abstract class Bot {
 	
-	public String getName();
+	public final String name;
+	protected final Game game;
+	
+	public Bot(String name, Game game) {
+		this.name = name;
+		this.game = game;
+	}
+
+	public abstract Action takeTurn();
 	
 }
